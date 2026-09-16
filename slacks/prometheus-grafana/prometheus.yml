@@ -1,0 +1,33 @@
+# Nabrok — Prometheus Configuration
+# This is a minimal config that scrapes itself. Add your services below.
+
+global:
+  scrape_interval: 15s    # How often to scrape targets
+  evaluation_interval: 15s # How often to evaluate rules
+
+# Alerting configuration (optional)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets: ["alertmanager:9093"]
+
+# Rule files (optional)
+# rule_files:
+#   - "alerts.yml"
+
+# Scrape configurations
+scrape_configs:
+  # Prometheus scraping itself
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Add your services here:
+  #
+  # - job_name: "my-app"
+  #   static_configs:
+  #     - targets: ["host.docker.internal:8080"]
+  #
+  # - job_name: "redis"
+  #   static_configs:
+  #     - targets: ["host.docker.internal:9121"]  # redis_exporter

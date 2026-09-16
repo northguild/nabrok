@@ -1,0 +1,13 @@
+# Nabrok — Grafana Provisioned Data Sources
+# This auto-configures Prometheus as a data source in Grafana
+# yaml-language-server: $schema=https://raw.githubusercontent.com/RedHatOfficial/yaml-language-server/master/src/commands/schemaStore/schemas/kubernetes/Deployment.json
+
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true

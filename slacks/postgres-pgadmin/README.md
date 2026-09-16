@@ -2,11 +2,26 @@
 
 A ready-to-run Docker Compose stack for PostgreSQL with the official pgAdmin 4 web interface.
 
+## Setup
+
+Grab these two files into your own project — no need to clone the whole repo:
+
+| File | Purpose |
+|------|---------|
+| [`docker-compose.yml`](slacks/postgres-pgadmin/docker-compose.yml) | The stack definition |
+| [`.env.example`](slacks/postgres-pgadmin/.env.example) | Environment variables (copy to `.env`) |
+
+```bash
+# Copy the files into your project
+curl -o docker-compose.yml https://raw.githubusercontent.com/<your-org>/nabrok/main/slacks/postgres-pgadmin/docker-compose.yml
+curl -o .env.example https://raw.githubusercontent.com/<your-org>/nabrok/main/slacks/postgres-pgadmin/.env.example
+
+# Or just download them from GitHub and move them wherever you like
+```
+
 ## Quick Start
 
 ```bash
-cd postgres-pgadmin
-
 # Optional: customize credentials
 cp .env.example .env
 # Edit .env to your liking

@@ -1,6 +1,6 @@
 # Nabrok 🐳👖
 
-> Magical Docker Compose files, forged in the fires of **Nábrók** — the mythical pants of Norse legend.
+> Docker Compose stacks forged in the fires of **Nábrók** — the mythical pants of Norse legend.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -14,10 +14,10 @@ Just as Nábrók held every pair of pants, Nabrok holds every compose file you'l
 
 Because setting up services shouldn't require reinventing the wheel (or the YAML) every time. Nabrok provides:
 
-- **Battle-tested configs** — production-ready Docker Compose files
 - **Quick starts** — spin up entire stacks with a single `docker compose up`
 - **Modular & reusable** — compose files designed to be forked, adapted, and combined
 - **Well documented** — because reading cryptic YAML at 2 AM is nobody's idea of fun
+- **Educational cheat sheets** — each stack includes a crash course so you actually learn what the tech does
 
 ## Usage
 
@@ -26,13 +26,16 @@ Because setting up services shouldn't require reinventing the wheel (or the YAML
 git clone https://github.com/<your-org>/nabrok.git
 cd nabrok
 
-# Pick a compose file and go
-docker compose -f <path-to-compose-file> up -d
+# Pick a stack and go
+cd slacks/<stack-name>
+docker compose up -d
 ```
 
 ## Contributing
 
 Contributions are welcome! Whether it's a new compose file, an improvement to an existing one, or better documentation — fork, change, and open a PR.
+
+**Heads up:** these pants aren't battle-tested yet. They're more like training pants. We need you to wear them out, test them in the wild, and let us know if anything leaks. If you find `accidents` in your pants, don't say a word — just open a PR and we'll wipe together. 👖
 
 ## License
 
