@@ -1,0 +1,34 @@
+# Nabrok — Redis + Redis Commander
+# Spin up a Redis database with the Redis Commander web UI
+
+services:
+  redis:
+    image: redis:8-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis-commander
+    restart: unless-stopped
+    environment:
+      REDIS_HOSTS: local:redis:${REDIS_PORT:-6379}
+      HTTP_USER: ${REDIS_CMD_USER:-admin}
+      HTTP_PASSWORD: ${REDIS_CMD_PASS:-admin}
+    ports:
+      - "${REDIS_CMD_PORT:-5000}:8081"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+volumes:
+  redis_data:

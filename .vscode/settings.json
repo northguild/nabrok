@@ -1,0 +1,14 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": [
+      ".github/workflows/*.yml",
+      ".github/workflows/*.yaml"
+    ]
+  },
+  "yaml.customTags": [
+    "!scalar sequence",
+    "!seq",
+    "!tag:yaml.org,2002:python/str",
+    "!tag:yaml.org,2002:python/unicode"
+  ]
+}
